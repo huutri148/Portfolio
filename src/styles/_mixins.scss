@@ -1,0 +1,55 @@
+// flex
+@mixin flex-box($align: stretch, $justify: flex-start) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flex-perfect-center {
+  @include flex-box(center, center);
+}
+
+// responsive
+@mixin responsive($breakpoint) {
+  @if $breakpoint == extra-small {
+    @media only screen and (max-width: 575px) {
+      @content;
+    } // < 576px
+  }
+
+  @if $breakpoint == small {
+    @media only screen and (min-width: 576px) {
+      @content;
+    } // >= 576px
+  }
+
+  @if $breakpoint == medium {
+    @media only screen and (min-width: 768px) {
+      @content;
+    } // >= 768px
+  }
+
+  @if $breakpoint == large {
+    @media only screen and (min-width: 992px) {
+      @content;
+    } // >= 992px
+  }
+
+  @if $breakpoint == extra-large {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    } // >= 1200px
+  }
+
+  @if $breakpoint == super-large {
+    @media only screen and (min-width: 1600px) {
+      @content;
+    } // >= 1600px
+  }
+}
+
+@mixin ellipsis-display {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
