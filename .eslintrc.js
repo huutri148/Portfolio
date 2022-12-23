@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ["plugin:react/recommended", "standard-with-typescript", "prettier"],
+  extends: [
+    "plugin:react/recommended",
+    "standard-with-typescript",
+    "prettier",
+    "plugin:storybook/recommended"
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
@@ -18,11 +23,13 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-confusing-void-expression": [
       "error",
-      { ignoreArrowShorthand: true, ignoreVoidOperator: true }
+      {
+        ignoreArrowShorthand: true,
+        ignoreVoidOperator: true
+      }
     ],
     "@typescript-eslint/no-unused-expressions": "error",
-    "@typescript-eslint/no-unused-vars": "off",
-
+    "@typescript-eslint/no-unused-vars": "error",
     // React
     "react/prefer-stateless-function": "warn",
     "react/react-in-jsx-scope": "off",
@@ -33,7 +40,12 @@ module.exports = {
         unnamedComponents: "arrow-function"
       }
     ],
-    "react/jsx-filename-extension": ["error", { extensions: [".ts", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        extensions: [".ts", ".tsx"]
+      }
+    ],
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": 0,
     "arrow-body-style": ["error", "as-needed"],
@@ -45,7 +57,6 @@ module.exports = {
       }
     ],
     "react-hooks/exhaustive-deps": "error",
-
     // File styles
     "linebreak-style": 0
   },
