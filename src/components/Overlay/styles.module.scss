@@ -1,0 +1,31 @@
+.overlay-wrapper {
+  &.modal-wrapper.active::before {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.active::before {
+    position: absolute;
+    z-index: 1;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.modal-wrapper::before {
+    position: fixed;
+  }
+
+  &::before,
+  &.modal-wrapper::before {
+    content: "";
+    z-index: 2;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  }
+}
