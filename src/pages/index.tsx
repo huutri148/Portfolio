@@ -1,7 +1,6 @@
-const HomeContainer = () => (
-  <>
-    <h1>Welcome To Home</h1>
-  </>
-);
+// views
+import Home from "@/views/Home";
+
+const HomeContainer = () => <Home />;
 
 export default HomeContainer;

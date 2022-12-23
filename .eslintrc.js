@@ -30,6 +30,7 @@ module.exports = {
     ],
     "@typescript-eslint/no-unused-expressions": "error",
     "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/strict-boolean-expressions": "off",
     // React
     "react/prefer-stateless-function": "warn",
     "react/react-in-jsx-scope": "off",
