@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
+# https://github.com/typicode/husky/issues/1200 
+# Terminal is being exploded with repeated log outputs
+exec >/dev/tty 2>&1
 
 yarn lint-staged
